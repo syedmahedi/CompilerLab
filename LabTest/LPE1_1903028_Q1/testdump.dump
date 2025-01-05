@@ -1,0 +1,30 @@
+
+taskout.o:     file format pe-i386
+
+
+Disassembly of section .text:
+
+00000000 <_main>:
+   0:	55                   	push   ebp
+   1:	89 e5                	mov    ebp,esp
+   3:	83 e4 f0             	and    esp,0xfffffff0
+   6:	83 ec 30             	sub    esp,0x30
+   9:	e8 00 00 00 00       	call   e <_main+0xe>
+   e:	c7 44 24 2c 0a 00 00 	mov    DWORD PTR [esp+0x2c],0xa
+  15:	00 
+  16:	c7 44 24 28 14 00 00 	mov    DWORD PTR [esp+0x28],0x14
+  1d:	00 
+  1e:	8b 44 24 2c          	mov    eax,DWORD PTR [esp+0x2c]
+  22:	0f af 44 24 28       	imul   eax,DWORD PTR [esp+0x28]
+  27:	89 44 24 1c          	mov    DWORD PTR [esp+0x1c],eax
+  2b:	db 44 24 1c          	fild   DWORD PTR [esp+0x1c]
+  2f:	dd 05 10 00 00 00    	fld    QWORD PTR ds:0x10
+  35:	de f9                	fdivrp st(1),st
+  37:	dd 5c 24 04          	fstp   QWORD PTR [esp+0x4]
+  3b:	c7 04 24 00 00 00 00 	mov    DWORD PTR [esp],0x0
+  42:	e8 00 00 00 00       	call   47 <_main+0x47>
+  47:	b8 00 00 00 00       	mov    eax,0x0
+  4c:	c9                   	leave  
+  4d:	c3                   	ret    
+  4e:	90                   	nop
+  4f:	90                   	nop

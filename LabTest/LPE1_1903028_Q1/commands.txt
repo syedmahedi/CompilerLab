@@ -1,0 +1,5 @@
+    gcc -E test.c > testi.i
+	gcc -S -masm=intel testi.i 
+	as -o taskout.o tests.s 
+	objdump -M intel -d testout.o > testdump.dump 
+	gcc -o testexe test.o

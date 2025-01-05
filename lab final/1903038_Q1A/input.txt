@@ -1,0 +1,15 @@
+main () function
+
+begin
+
+monekori x hocche type integer
+
+monekori y hocche type integer
+
+x soman 10
+
+y  soman 20 jog 30 biyog x
+
+y k print kori
+
+end
