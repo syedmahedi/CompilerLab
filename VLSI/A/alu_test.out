@@ -1,0 +1,131 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000015f2bffa450 .scope module, "ALU_tb" "ALU_tb" 2 1;
+ .timescale 0 0;
+v0000015f2c05bb30_0 .var "A", 6 0;
+v0000015f2c05c670_0 .var "B", 6 0;
+v0000015f2c05c2b0_0 .net "CF", 0 0, L_0000015f2c0a4dd0;  1 drivers
+v0000015f2c05c710_0 .var "OP", 0 0;
+v0000015f2c05bef0_0 .net "R", 6 0, v0000015f2c05c530_0;  1 drivers
+v0000015f2c05bc70_0 .net "SF", 0 0, L_0000015f2c0a5a50;  1 drivers
+v0000015f2c05bf90_0 .net "ZF", 0 0, L_0000015f2c0a5ff0;  1 drivers
+S_0000015f2bfbd080 .scope module, "uut" "ALU" 2 8, 3 1 0, S_0000015f2bffa450;
+ .timescale 0 0;
+    .port_info 0 /INPUT 7 "A";
+    .port_info 1 /INPUT 7 "B";
+    .port_info 2 /INPUT 1 "OP";
+    .port_info 3 /OUTPUT 7 "result";
+    .port_info 4 /OUTPUT 1 "CF";
+    .port_info 5 /OUTPUT 1 "SF";
+    .port_info 6 /OUTPUT 1 "ZF";
+v0000015f2c05bbd0_0 .net "A", 6 0, v0000015f2c05bb30_0;  1 drivers
+v0000015f2c05be50_0 .net "B", 6 0, v0000015f2c05c670_0;  1 drivers
+v0000015f2c05c210_0 .net "CF", 0 0, L_0000015f2c0a4dd0;  alias, 1 drivers
+v0000015f2c05c7b0_0 .net "OP", 0 0, v0000015f2c05c710_0;  1 drivers
+v0000015f2c05b9f0_0 .net "R_ADD", 6 0, L_0000015f2c0a5af0;  1 drivers
+v0000015f2c05b950_0 .net "R_NOR", 6 0, L_0000015f2c00bf50;  1 drivers
+v0000015f2c05c350_0 .net "SF", 0 0, L_0000015f2c0a5a50;  alias, 1 drivers
+v0000015f2c05c3f0_0 .net "ZF", 0 0, L_0000015f2c0a5ff0;  alias, 1 drivers
+L_0000015f2c05c908 .functor BUFT 1, C4<0000000>, C4<0>, C4<0>, C4<0>;
+v0000015f2c05ba90_0 .net/2u *"_ivl_2", 6 0, L_0000015f2c05c908;  1 drivers
+v0000015f2c05c530_0 .var "result", 6 0;
+E_0000015f2bff8390 .event anyedge, v0000015f2c05c7b0_0, v0000015f2c05c490_0, v0000015f2c05b8b0_0;
+L_0000015f2c0a5a50 .part v0000015f2c05c530_0, 6, 1;
+L_0000015f2c0a5ff0 .cmp/eq 7, v0000015f2c05c530_0, L_0000015f2c05c908;
+S_0000015f2bfbd210 .scope module, "ADD1" "ALU_ADD_7bit" 3 14, 4 1 0, S_0000015f2bfbd080;
+ .timescale 0 0;
+    .port_info 0 /INPUT 7 "A";
+    .port_info 1 /INPUT 7 "B";
+    .port_info 2 /OUTPUT 7 "sum";
+    .port_info 3 /OUTPUT 1 "carry";
+v0000015f2bfb7260_0 .net "A", 6 0, v0000015f2c05bb30_0;  alias, 1 drivers
+v0000015f2bfbd3a0_0 .net "B", 6 0, v0000015f2c05c670_0;  alias, 1 drivers
+v0000015f2bfbd440_0 .net *"_ivl_0", 7 0, L_0000015f2c05c030;  1 drivers
+L_0000015f2c05c878 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000015f2bfb6a90_0 .net *"_ivl_3", 0 0, L_0000015f2c05c878;  1 drivers
+v0000015f2bfb6b30_0 .net *"_ivl_4", 7 0, L_0000015f2c05c0d0;  1 drivers
+L_0000015f2c05c8c0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000015f2bfb6bd0_0 .net *"_ivl_7", 0 0, L_0000015f2c05c8c0;  1 drivers
+v0000015f2bfb6c70_0 .net "carry", 0 0, L_0000015f2c0a4dd0;  alias, 1 drivers
+v0000015f2bfb6d10_0 .net "full_sum", 7 0, L_0000015f2c05c170;  1 drivers
+v0000015f2c05b8b0_0 .net "sum", 6 0, L_0000015f2c0a5af0;  alias, 1 drivers
+L_0000015f2c05c030 .concat [ 7 1 0 0], v0000015f2c05bb30_0, L_0000015f2c05c878;
+L_0000015f2c05c0d0 .concat [ 7 1 0 0], v0000015f2c05c670_0, L_0000015f2c05c8c0;
+L_0000015f2c05c170 .arith/sum 8, L_0000015f2c05c030, L_0000015f2c05c0d0;
+L_0000015f2c0a5af0 .part L_0000015f2c05c170, 0, 7;
+L_0000015f2c0a4dd0 .part L_0000015f2c05c170, 7, 1;
+S_0000015f2bffa770 .scope module, "NOR1" "ALU_NOR_7bit" 3 13, 5 1 0, S_0000015f2bfbd080;
+ .timescale 0 0;
+    .port_info 0 /INPUT 7 "A";
+    .port_info 1 /INPUT 7 "B";
+    .port_info 2 /OUTPUT 7 "result";
+L_0000015f2c00bee0 .functor OR 7, v0000015f2c05bb30_0, v0000015f2c05c670_0, C4<0000000>, C4<0000000>;
+L_0000015f2c00bf50 .functor NOT 7, L_0000015f2c00bee0, C4<0000000>, C4<0000000>, C4<0000000>;
+v0000015f2c05c5d0_0 .net "A", 6 0, v0000015f2c05bb30_0;  alias, 1 drivers
+v0000015f2c05bd10_0 .net "B", 6 0, v0000015f2c05c670_0;  alias, 1 drivers
+v0000015f2c05bdb0_0 .net *"_ivl_0", 6 0, L_0000015f2c00bee0;  1 drivers
+v0000015f2c05c490_0 .net "result", 6 0, L_0000015f2c00bf50;  alias, 1 drivers
+    .scope S_0000015f2bfbd080;
+T_0 ;
+    %wait E_0000015f2bff8390;
+    %load/vec4 v0000015f2c05c7b0_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 1;
+    %cmp/u;
+    %jmp/1 T_0.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 1;
+    %cmp/u;
+    %jmp/1 T_0.1, 6;
+    %pushi/vec4 0, 0, 7;
+    %store/vec4 v0000015f2c05c530_0, 0, 7;
+    %jmp T_0.3;
+T_0.0 ;
+    %load/vec4 v0000015f2c05b950_0;
+    %store/vec4 v0000015f2c05c530_0, 0, 7;
+    %jmp T_0.3;
+T_0.1 ;
+    %load/vec4 v0000015f2c05b9f0_0;
+    %store/vec4 v0000015f2c05c530_0, 0, 7;
+    %jmp T_0.3;
+T_0.3 ;
+    %pop/vec4 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0000015f2bffa450;
+T_1 ;
+    %vpi_call 2 19 "$dumpfile", "alu_test.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000015f2bffa450 {0 0 0};
+    %vpi_call 2 22 "$monitor", "Time=%0t | A=%b B=%b OP=%b => R=%b | CF=%b SF=%b ZF=%b", $time, v0000015f2c05bb30_0, v0000015f2c05c670_0, v0000015f2c05c710_0, v0000015f2c05bef0_0, v0000015f2c05c2b0_0, v0000015f2c05bc70_0, v0000015f2c05bf90_0 {0 0 0};
+    %pushi/vec4 12, 0, 7;
+    %store/vec4 v0000015f2c05bb30_0, 0, 7;
+    %pushi/vec4 3, 0, 7;
+    %store/vec4 v0000015f2c05c670_0, 0, 7;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000015f2c05c710_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 42, 0, 7;
+    %store/vec4 v0000015f2c05bb30_0, 0, 7;
+    %pushi/vec4 25, 0, 7;
+    %store/vec4 v0000015f2c05c670_0, 0, 7;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000015f2c05c710_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 37 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "ALU_tb.v";
+    "ALU.v";
+    "ALU_ADD_7bit.v";
+    "ALU_NOR_7bit.v";
